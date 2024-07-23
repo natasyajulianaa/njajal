@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nata Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="output.css"/>
+    <style>
+        .button-gradient {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+            border-radius: 25px;
+            background: linear-gradient(22deg, #F047CB 37%, #A394F4 80%);
+            opacity: 0.62;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            right: 0;
+            margin-top: 100px;
+            width: 900px;
+            height: 430px;
+            background: linear-gradient(22deg, #F047CB 37%, #A394F4 80%);
+            opacity: 0.15;
+            transform: scale(0.931);
+            z-index: -1;
+            filter: blur(100px);
+        }
+
+        .hiasan-overlay {
+            position: absolute;
+            right: 1000px;
+            margin-top: 100px;
+            width: 900px;
+            height: 430px;
+            background: linear-gradient(22deg, #F047CB 37%, #e0dfe8 80%);
+            opacity: 0.15;
+            transform: scale(0.931);
+            z-index: -1;
+            filter: blur(100px);
+        }
+
+        
+
+        .skills-container {
+            display: flex;
+            flex-direction: row; 
+            gap: 15px; 
+        }
+
+        .skills-gradient {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+            border-radius: 15px 0 15px 0; /* Radius pada pojok kiri atas dan kanan bawah */
+            background: linear-gradient(22deg, #F047CB 37%, #A394F4 80%);
+            opacity: 0.62;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .custom-border-radius {
+          border-radius: 0 0px 0px 0;
+        }
+
+       .custom-gradient-border {
+        border: 5px solid;
+        border-image-slice: 1;
+        border-width: 1px;
+        border-image-source: linear-gradient(to right, rgba(240, 71, 203, 0.25), rgba(163, 148, 244, 0.25));
+       }
+
+       
+      .border-gradient {
+        border-radius: 15px 0 15px 0; /* Radius pada pojok kiri atas dan kanan bawah */
+            background: linear-gradient(22deg, #F047CB 37%, #A394F4 80%);
+            opacity: 0.62;
+       border-image-slice: 1;
+       }
+
+
+        body {
+            position: relative;
+            overflow-x: hidden;
+        }
+</style>
+</head>
+<body class="bg-white font-sans">
+    <div class="gradient-overlay"></div>
+
+    <nav class="relative">
+        <!-- Desktop Navbar -->
+        <div id="desktop-navbar" class="absolute left-24 top-10 hidden lg:block">
+            <div class="container mx-auto">
+                <ul class="flex space-x-8 text-gray-800">
+                    <li class="text-lg font-semibold">
+                        <a href="#about" class="hover:text-purple-500 focus:text-purple-300 active:text-purple-300">About</a>
+                    </li>
+                    <li class="text-lg font-semibold">
+                        <a href="#project" class="hover:text-purple-500 focus:text-purple-300 active:text-purple-300">Project</a>
+                    </li>
+                    <li class="text-lg font-semibold">
+                        <a href="#contact" class="hover:text-purple-500 focus:text-purple-300 active:text-purple-300">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Hamburger Menu Icon -->
+        <button id="hamburger-icon" class="block lg:hidden text-gray-800 focus:outline-none absolute left-4 top-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-white shadow-md transform -translate-x-full transition-transform duration-300">
+            <!-- Tanda silang -->
+            <button id="close-menu" class="absolute right-4 top-4 text-gray-800 focus:outline-none hidden">
+                <span class="text-3xl">❌</span>
+            </button>
+            <ul class="flex flex-col p-4 space-y-4 text-gray-800">
+                <li class="text-lg font-semibold">
+                    <a href="#about" class="hover:text-purple-500 focus:text-purple-300 active:text-purple-300">About</a>
+                </li>
+                <li class="text-lg font-semibold">
+                    <a href="#project" class="hover:text-purple-500 focus:text-purple-300 active:text-purple-300">Project</a>
+                </li>
+                <li class="text-lg font-semibold">
+                    <a href="#contact" class="hover:text-purple-500 focus:text-purple-300 active:text-purple-300">Contact Me</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+
+    <div class="container mx-auto mt-56 absolute left-24 max-w-xl px-4">
+        <h1 class="text-5xl font-bold text-gray-800">
+            Hello There, Find out all about Nata right here!
+        </h1>
+        <p class="text-xl font-light text-gray-400 mt-5 max-w-md">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
+        </p>
+        <a href="#work" class="button-gradient mt-5 inline-block">
+            See My Work
+        </a>
+    </div>
+    
+    <div class="container mx-auto mt-96 absolute left-24 top-96 px-4 sm:px-6 lg:px-8">
+        <div class="hiasan-overlay "></div>
+
+        <h1 class="text-5xl font-bold text-gray-800 text-center sm:text-left">
+            About Me
+        </h1>
+        <img class="absolute left-64 top-0 hidden md:block" src="img/pattern.png" alt="Pattern">
+        <p class="text-xl font-light text-gray-400 mt-5 max-w-5xl mx-auto sm:mx-0">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi sapiente officiis inventore minus minima quo explicabo corporis. Commodi eveniet distinctio quae, neque quaerat cumque pariatur eaque illo vel nisi praesentium aspernatur molestiae vero dignissimos quisquam! Excepturi, repellat! Error doloribus qui voluptatum.
+        </p>
+    </div>
+    
+    <div class="container mx-auto mt-12 absolute left-24 top-[68rem] px-4 sm:px-6 lg:px-8">
+        <h1 class="text-5xl font-bold text-gray-800 text-center sm:text-left">
+            My Skills
+        </h1>
+        <img class="absolute left-[15rem] top-0 hidden md:block" src="img/pattern.png" alt="Pattern">
+        <div class="skills-container flex flex-wrap gap-2 absolute top-20 w-full max-w-[45rem]">
+            <a href="#" class="skills-gradient block w-full sm:w-auto">Communication</a>
+            <a href="#" class="skills-gradient block w-full sm:w-auto">Critical Thinking</a>
+            <a href="#" class="skills-gradient block w-full sm:w-auto">Networking</a>
+            <a href="#" class="skills-gradient block w-full sm:w-auto">Multitasking</a>
+            <a href="#" class="skills-gradient block w-full sm:w-auto">UI/UX Design</a>
+            <a href="#" class="skills-gradient block w-full sm:w-auto">Writing</a>
+            <a href="#" class="skills-gradient block w-full sm:w-auto">Web Programming</a>
+            <a href="#" class="skills-gradient block w-full sm:w-auto">Language Skills</a>
+        </div>
+    </div>
+    
+    
+
+    <div class="container mx-auto mt-10 absolute left-24 top-[100rem] px-4 sm:px-6 lg:px-8">
+        <h1 class="text-5xl font-bold text-gray-800">
+            Featured Projects
+        </h1>
+        <img class="absolute left-[26rem] top-0 hidden md:block" src="img/pattern.png" alt="Pattern">
+        <a href="#" class="text-gray-400 mt-5 hover:underline flex items-center">
+            See All Project
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+    
+        <div class="flex flex-wrap gap-6 mt-6">
+            <!-- Project Card 1 -->
+            <div class="w-full md:w-[600px] p-5 bg-white shadow-lg custom-border-radius custom-gradient-border">
+                <h2 class="text-2xl font-bold mb-2">UI/UX Design</h2>
+                <p class="text-lg text-gray-600 mb-4">Web catalog of pharmacies</p>
+                <img src="img/pharmacy.png" alt="Website Mockup" class="w-full custom-border-radius mb-6">
+            </div>
+            <!-- Project Card 2 -->
+            <div class="w-full md:w-[600px] p-5 bg-white shadow-lg custom-border-radius custom-gradient-border">
+                <h2 class="text-2xl font-bold mb-2">UI/UX Design</h2>
+                <p class="text-lg text-gray-600 mb-4">Web catalog of pharmacies</p>
+                <img src="img/pharmacy.png" alt="Website Mockup" class="w-full custom-border-radius mb-6">
+            </div>
+            <!-- Project Card 3 -->
+            <div class="w-full md:w-[600px] p-5 bg-white shadow-lg custom-border-radius custom-gradient-border">
+                <h2 class="text-2xl font-bold mb-2">UI/UX Design</h2>
+                <p class="text-lg text-gray-600 mb-4">Web catalog of pharmacies</p>
+                <img src="img/pharmacy.png" alt="Website Mockup" class="w-full custom-border-radius mb-6">
+            </div>
+            <!-- Project Card 4 -->
+            <div class="w-full md:w-[600px] p-5 bg-white shadow-lg custom-border-radius custom-gradient-border">
+                <h2 class="text-2xl font-bold mb-2">UI/UX Design</h2>
+                <p class="text-lg text-gray-600 mb-4">Web catalog of pharmacies</p>
+                <img src="img/pharmacy.png" alt="Website Mockup" class="w-full custom-border-radius mb-6">
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="container mx-auto mt-10 absolute left-24 top-[190rem] mb-8 px-4 sm:px-6 lg:px-8">
+        <h1 class="text-5xl font-bold text-gray-800">
+            Let's Connect!
+        </h1>
+        <img class="absolute left-[24.5rem] top-0 hidden md:block" src="img/pattern.png" alt="Pattern">
+        <a href="mailto:natasyajuliana21@gmail.com" class="text-gray-400 mt-5 block max-w-xs">
+            <span class="whitespace-nowrap">
+                Feel free to reach out to me at 
+                <span class="text-purple-500 hover:underline">natasyajuliana21@gmail.com</span>.
+            </span>
+            <span class="block mt-1">
+                I always enjoy meeting new people!
+            </span>
+        </a>
+    
+        <div class="flex flex-wrap gap-4 mt-7 mb-32 justify-start">
+            <!-- Kotak 1: LinkedIn -->
+            <a href="https://www.linkedin.com/in/natasya-juliana/" class="relative p-4 bg-white rounded-lg shadow-lg overflow-hidden custom-gradient-border w-24 h-24 flex items-center justify-center">
+                <div class="absolute inset-0"></div>
+                <div class="relative flex justify-center items-center w-full h-full">
+                    <img src="img/Linkedin.png" alt="LinkedIn" class="w-11 h-11">
+                </div>
+            </a>
+        
+            <!-- Kotak 2: Instagram -->
+            <a href="https://www.instagram.com/_nattajl/" class="relative p-4 bg-white rounded-lg shadow-lg overflow-hidden custom-gradient-border w-24 h-24 flex items-center justify-center">
+                <div class="absolute inset-0"></div>
+                <div class="relative flex justify-center items-center w-full h-full">
+                    <img src="img/Instagram.png" alt="Instagram" class="w-11 h-11">
+                </div>
+            </a>
+        
+            <!-- Kotak 3: GitHub -->
+            <a href="https://github.com/natasyajulianaa" class="relative p-4 bg-white rounded-lg shadow-lg overflow-hidden custom-gradient-border w-24 h-24 flex items-center justify-center">
+                <div class="absolute inset-0"></div>
+                <div class="relative flex justify-center items-center w-full h-full">
+                    <img src="img/Github.png" alt="GitHub" class="w-11 h-11">
+                </div>
+            </a>
+        
+            <!-- Kotak 4: Behance -->
+            <a href="https://www.behance.net/natasyajuliana" class="relative p-4 bg-white rounded-lg shadow-lg overflow-hidden custom-gradient-border w-24 h-24 flex items-center justify-center">
+                <div class="absolute inset-0"></div>
+                <div class="relative flex justify-center items-center w-full h-full">
+                    <img src="img/Behance.png" alt="Behance" class="w-11 h-11">
+                </div>
+            </a>
+        
+            <!-- Kotak 5: CV -->
+            <a href="cv/CV_NATASYA JULIANA.pdf" class="relative p-4 bg-white rounded-lg shadow-lg overflow-hidden custom-gradient-border w-24 h-24 flex items-center justify-center">
+                <div class="absolute inset-0"></div>
+                <div class="relative flex justify-center items-center w-full h-full ">
+                    <img src="img/cv (2).png" alt="CV" class="w-11 h-11">
+                </div>
+            </a>
+        </div>
+    </div>
+    
+
+
+
+    <div class="container mx-auto mt-10 absolute  top-[220rem] mb-8">
+        <div class="flex flex-col items-center justify-center">
+            <div class="w-[1056.11px] h-[2px] bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 mb-4"></div>
+            <p class="text-lg text-gray-600 mb-4 text-center">© 2024-present Natasya Juliana. All rights reserved</p>
+        </div>
+    </div>
+    
+
+    
+    <script>
+    // Get elements
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const closeMenu = document.getElementById('close-menu');
+const mobileMenu = document.getElementById('mobile-menu');
+const desktopNavbar = document.getElementById('desktop-navbar');
+
+// Toggle mobile menu
+hamburgerIcon.addEventListener('click', () => {
+    mobileMenu.classList.remove('-translate-x-full');
+    mobileMenu.classList.add('translate-x-0');
+    closeMenu.classList.remove('hidden');
+    desktopNavbar.classList.add('hidden');
+});
+
+// Close mobile menu
+closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-0');
+    mobileMenu.classList.add('-translate-x-full');
+    closeMenu.classList.add('hidden');
+    desktopNavbar.classList.remove('hidden');
+});
+
+
+
+    </script>
+    
+    
+        
+        
+        
+        
+
+
+</body>
+</html>
